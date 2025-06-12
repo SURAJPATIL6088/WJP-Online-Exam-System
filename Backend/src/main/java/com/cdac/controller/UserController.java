@@ -22,7 +22,7 @@ import com.cdac.service.UserService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 
-@CrossOrigin("http://localhost:5173")
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/users")
 @AllArgsConstructor

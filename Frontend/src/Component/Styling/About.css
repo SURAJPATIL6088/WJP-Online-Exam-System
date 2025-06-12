@@ -1,0 +1,77 @@
+.about-page {
+  padding-top: 40px;
+  padding-bottom: 70px;
+  font-size: 18px;
+  background-color: #000000;
+  color: #fcfcfd;
+  line-height: 1.7;
+}
+
+h1 {
+  color: #e23759 !important;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+h2, #h2 {
+  color: #eaeaea;
+  font-size: 2rem;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.about-image img {
+  box-shadow: 0 5px 10px rgba(227, 10, 10, 0.4);
+  border-radius: 12px;
+  width: 550px;
+  height: 360px;
+  object-fit: cover;
+  margin-left: 35px;
+}
+
+.mission-card {
+  background: linear-gradient(135deg, #0a0a0a, #1c1f23);
+  color: #f0f0f0;
+  border: none;
+  padding: 30px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  padding-top: 5px;
+  box-shadow: 0 8px 6px rgba(255, 0, 0, 0.05);
+}
+
+.mission-card blockquote {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin: 0;
+  color: #dddddd;
+}
+#cardp{
+  font-size: 21px !important;
+}
+
+
+section {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  color: white;
+  padding: 28px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 0, 0, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+section:hover {
+  box-shadow: 0 12px 30px rgba(255, 0, 0, 0.15);
+}
+.para,#first{
+  font-size: 21px !important;
+  font-weight: 10px;
+}
+.card-section p{
+  font-size: 18px !important;
+}
+.info-card{
+  height: 500px;
+}

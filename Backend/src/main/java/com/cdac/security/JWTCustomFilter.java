@@ -14,9 +14,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.AllArgsConstructor;
 
-//create custom filter by extending from OncePerRequestFilter
-//It will be executed once / every request
-@Component //to declare it as a spring bean
+
+@Component
 @AllArgsConstructor
 public class JWTCustomFilter extends OncePerRequestFilter{
 	//verify JWT

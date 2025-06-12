@@ -55,5 +55,9 @@ public class OnlineExamServiceImpl implements OnlineExamService{
 	public List<String> getAllSubjects() {
 		return onlineExamDao.findDistinctSubject();
 	}
-
+	
+	@Override
+	public List<OnlineExam> getQuestionsBySubject(String subject) {
+		return onlineExamDao.findBySubject(subject);
+	}
 }
