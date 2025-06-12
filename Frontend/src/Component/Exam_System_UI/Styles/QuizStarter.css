@@ -1,0 +1,106 @@
+.quiz-container {
+  background-color: #121212;
+  color: #ffffff;
+  min-height: 100vh;
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.quiz-container h2,
+.quiz-container h3 {
+  color: crimson;
+}
+
+.quiz-container select {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #444;
+  padding: 8px 12px;
+  margin: 10px 0;
+  border-radius: 4px;
+}
+
+.quiz-container select option {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.quiz-container button {
+  background-color: #00bcd4;
+  color: #121212;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.quiz-container button:hover {
+  background-color: #00acc1;
+}
+
+
+.subject-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.subject-card {
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 20px;
+  cursor: pointer;
+  width: 200px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+  text-align: center;
+}
+
+.subject-card:hover {
+  transform: scale(1.05);
+  background-color: transparent;
+}
+
+.subject-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.subject-card {
+  background: transparent;
+  border-radius: 10px;
+  padding: 20px;
+  width: 220px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 1px solid red;
+}
+
+.subject-card button {
+  margin-top: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.subject-card button:hover {
+  background-color: #0056b3;
+}
+
+.exams-heading {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}

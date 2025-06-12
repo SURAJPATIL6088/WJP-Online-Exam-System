@@ -1,0 +1,55 @@
+
+.custom-navbar {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+  background-color: black;
+  color: rgb(243, 247, 250);
+  height: 80px;
+  font-size: 18px;
+  
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 22px !important;
+  color: rgb(221, 32, 70) !important;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-weight: 500;
+  padding: 8px 15px !important;
+  margin: 0 5px;
+  border-radius: 8px;
+}
+
+.nav-button {
+  padding: 8px 20px !important;
+  font-weight: 500 !important;
+  color: white !important;
+  background: linear-gradient(135deg,rgb(223, 81, 96), rgb(227, 35, 54));
+  border: none !important;
+  box-shadow: none;
+}
+.nav-button :hover{
+  text-decoration: underline;
+  color: aliceblue;
+}
+
+@media (max-width: 768px) {
+  .custom-navbar .nav-link,
+  .custom-navbar .nav-button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .custom-navbar .navbar-brand {
+    font-size: 18px;
+  }
+
+  .custom-navbar .dropdown-toggle img {
+    width: 30px;
+    height: 30px;
+  }
+}
+

@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.AllArgsConstructor;
 
 import com.cdac.custom_exceptions.NotFoundException;
+import com.cdac.dao.OnlineExamDao;
 import com.cdac.entities.OnlineExam;
 import com.cdac.service.OnlineExamService;
 import jakarta.validation.Valid;
@@ -17,12 +18,14 @@ import java.util.Optional;
 
 import static org.springframework.http.HttpStatus.CREATED;
 
-@CrossOrigin("http://localhost:5173")
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/online-exam")
 @AllArgsConstructor
 public class OnlineExamController {
+
     private final OnlineExamService questionService;
+
 
     @PostMapping("/admin/create-new-question")
     public ResponseEntity<OnlineExam> createQuestion(@Valid @RequestBody OnlineExam question){
@@ -63,18 +66,12 @@ public class OnlineExamController {
         List<String> subjects = questionService.getAllSubjects();
         return ResponseEntity.ok(subjects);
     }
-
-    /*@GetMapping("/exam/fetch-questions-for-user")
-    public ResponseEntity<List<OnlineExam>> getQuestionsForUser(
-            @RequestParam Integer numOfQuestions, @RequestParam String subject){
-        List<OnlineExam> allQuestions = questionService.getQuestionsForUser(numOfQuestions, subject);
-
-        List<OnlineExam> mutableQuestions = new ArrayList<>(allQuestions);
-        Collections.shuffle(mutableQuestions);
-
-        int availableQuestions = Math.min(numOfQuestions, mutableQuestions.size());
-        List<OnlineExam> randomQuestions = mutableQuestions.subList(0, availableQuestions);
-        return ResponseEntity.ok(randomQuestions);
-    }*/
+    
+    
+    @GetMapping("/questions/subject/{subject}")
+    public ResponseEntity<List<OnlineExam>> getQuestionsBySubject(@PathVariable String subject) {
+    	List<OnlineExam> questions = questionService.getQuestionsBySubject(subject);
+    	return ResponseEntity.ok(questions);
+    }
 
 }

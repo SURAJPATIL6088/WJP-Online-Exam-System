@@ -21,4 +21,7 @@ public interface OnlineExamService {
 	Optional<OnlineExam> getOnlineExamById(Long id);
 	
 	List<String> getAllSubjects();
+	
+	List<OnlineExam> getQuestionsBySubject(String subject);
+
 }

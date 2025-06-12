@@ -30,13 +30,13 @@ public class JwtUtils {
 	 * @Value => injection of a value (<constr-arg name n value : xml tags) arg - Spring
 	 * expression Lang - SpEL
 	 */
-	@Value("${SECRET_KEY}") // example of value injected as dependency , using SpEL
+	@Value("${SECRET_KEY}") 
 	private String jwtSecret;
 
 	@Value("${EXP_TIMEOUT}")
 	private int jwtExpirationMs;
 
-	private SecretKey key;//=> represents symmetric key
+	private SecretKey key;
 
 	@PostConstruct
 	public void init() {
@@ -45,29 +45,19 @@ public class JwtUtils {
 		key = Keys.hmacShaKeyFor(jwtSecret.getBytes());
 	}
 
-	// will be invoked by UserSignIn  controller , upon successful
 	// authentication
 	public String generateJwtToken(Authentication authentication) {
-		log.info("generate jwt token " + authentication);// contains verified user details
+		log.info("generate jwt token " + authentication);
 		User userPrincipal = (User) authentication.getPrincipal();
-		return Jwts.builder() // JWTs : a Factory class , used to create JWT tokens
+		return Jwts.builder() 
 				.subject((userPrincipal.getUsername())) // setting subject part of the token
 				.issuedAt(new Date())// Sets the JWT Claims iat (issued at) value of current date
-				.expiration(new Date((new Date()).getTime() + jwtExpirationMs))// Sets the JWT Claims exp
-																				// (expiration) value.
-				// setting a custom claim , to add granted authorities
+				.expiration(new Date((new Date()).getTime() + jwtExpirationMs))
 				.claim("authorities", 
 						getAuthoritiesInString(userPrincipal.getAuthorities()))
-				// setting a custom claim , to add user id (remove it if not required in the
-				// project)
-			
 
-				.signWith(key, Jwts.SIG.HS256) // Signs the constructed JWT using the specified
-								// algorithm with the specified key, producing a
-								// JWS(Json web signature=signed JWT)
-
-				// Using token signing algo : HMAC using SHA-512
-				.compact();// Actually builds the JWT and serializes it to a compact, URL-safe string
+				.signWith(key, Jwts.SIG.HS256) 
+				.compact();
 	}
 
 	// this method will be invoked by our custom JWT filter
@@ -77,23 +67,13 @@ public class JwtUtils {
 
 	// this method will be invoked by our custom JWT filter
 	public Claims validateJwtToken(String jwtToken) {
-		// try {
 		Claims claims = Jwts.parser()
 
-				.verifyWith(key) // sets the SAME secret key for JWT signature verification
+				.verifyWith(key)
 				.build()
+				.parseSignedClaims(jwtToken) 
+				.getPayload();
 
-				// rets the JWT parser set with the Key
-				.parseSignedClaims(jwtToken) // rets JWT with Claims added in the body
-				.getPayload();// => JWT valid , rets the Claims(payload)
-		/*
-		 * parseClaimsJws - throws:UnsupportedJwtException -if the JWT body | payload
-		 * does not represent any Claims JWSMalformedJwtException - if the JWT body |
-		 * payload is not a valid JWSSignatureException - if the JWT signature
-		 * validation fails ExpiredJwtException - if the specified JWT is expired
-		 * IllegalArgumentException - if the JWT claims body | payload is null or empty
-		 * or only whitespace
-		 */
 		return claims;
 	}
 
@@ -101,7 +81,6 @@ public class JwtUtils {
 		return authorities.stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList());
 	}
 
-	// this method will be invoked by our custom JWT filter to get list of granted
 	// authorities n store it in auth token
 	public List<GrantedAuthority> getAuthoritiesFromClaims(Claims claims) {
 
@@ -114,20 +93,16 @@ public class JwtUtils {
 	}
 
 	
-
 	public Authentication populateAuthenticationTokenFromJWT(String jwt) {
-		// validate JWT n retrieve JWT body (claims)
+
 		Claims payloadClaims = validateJwtToken(jwt);
-		// get user name from the claims
+
 		String email = getUserNameFromJwtToken(payloadClaims);
-		// get granted authorities as a custom claim
 		List<GrantedAuthority> authorities = getAuthoritiesFromClaims(payloadClaims);
 			// add user name/email , null:password granted authorities in Authentication object
 		UsernamePasswordAuthenticationToken token = 
 				new UsernamePasswordAuthenticationToken(email, null, authorities);
-//		UsernamePasswordAuthenticationToken token = 
-//				new UsernamePasswordAuthenticationToken(new User(email,"", authorities), null, authorities);
-//	
+
 		System.out.println("is authenticated " + token.isAuthenticated());// true
 		return token;
 

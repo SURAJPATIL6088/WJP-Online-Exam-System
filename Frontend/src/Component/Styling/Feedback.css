@@ -1,0 +1,95 @@
+.feedback-page {
+  padding-top: 40px;
+  padding-bottom: 60px;
+  background-color: #000; 
+}
+
+.feedback-card {
+  border: none;
+  padding: 30px;
+  border-radius: 15px;
+  background-color: black !important;
+  color: aliceblue  !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.rating-section .form-check {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.rating-section .form-check-input {
+  width: 18px;
+  height: 18px;
+  margin-bottom: 5px;
+  background-color: transparent;
+  border: 2px solid rgb(250, 237, 240);
+  cursor: pointer;
+}
+.rating-section .form-check-input:checked {
+  background-color: crimson;
+  border-color: crimson;
+}
+
+
+.rating-section .form-check-label {
+  font-size: 1rem;
+  color:aliceblue;
+
+}
+
+.feedback-thankyou {
+  border-radius: 15px;
+  padding: 60px 20px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 20px rgba(244, 67, 102, 0.2);
+  color: crimson;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+p {
+  color: #faf5f6;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+h2 {
+  color: crimson !important;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.feedback-form-group {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.feedback-form-group label,
+.feedback-form-group .form-control {
+  color: aliceblue !important;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.feedback-form-group .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+
+.form-control:hover, .form-select:hover{
+  border-color: crimson !important;
+}
+.form-label,.form-select{
+  border-color: rgb(55, 53, 53);
+}

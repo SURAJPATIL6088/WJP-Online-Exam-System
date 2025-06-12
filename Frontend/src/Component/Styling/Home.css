@@ -1,0 +1,132 @@
+.home-page {
+  padding-top: 30px;
+  padding-bottom: 60px;
+  background-color: black;
+  color: white;
+}
+
+.hero-section {
+  color: white;
+  border-radius: 15px;
+  padding: 60px 20px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 20px rgba(244, 67, 102, 0.2);
+  
+}
+#title{
+  color: #ebb7b7;
+}
+
+.feature-card {
+  border: none;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease;
+
+}
+#card1,#card2,#card3{
+
+  color: white;
+  border-radius: 15px;
+  padding: 10px 20px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 20px rgba(244, 67, 102, 0.2);
+  background-color: rgb(27, 25, 25);
+  font-size: large;
+}
+
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+.feature-icon {
+  font-size: 3rem;
+}
+
+.category-card {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+ 
+}
+#category1{
+  background: rgba(42, 41, 41, 0.05);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px); 
+  color: white;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid rgba(253, 6, 6, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+}
+
+.category-card:hover {
+  transform: scale(1.05);
+}
+
+.category-icon {
+  font-size: 2.5rem;
+}
+Button{
+  background: linear-gradient(135deg,rgb(223, 81, 96), rgb(227, 35, 54));
+  color: aliceblue !important;
+  text-decoration: none;
+  border-color: crimson !important;
+
+}
+
+#btn1,#btn2{
+  background: linear-gradient(135deg,rgb(223, 81, 96), rgb(227, 35, 54));
+  color:aliceblue;
+  font-weight: 400;
+  font-size: 17px;
+  border: none !important;
+  box-shadow: none;
+  height: 40px;
+ 
+}
+
+
+.card-text{
+  font-size: 19px !important;
+
+}
+.typewriter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 100px;
+ margin-bottom: -10px;
+}
+
+.typewriter-text{
+
+  font-family: 'Rajdhani', sans-serif;
+font-weight: 150;
+  padding-top: 15px;
+  font-size: 3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #000;
+  width: 0ch;
+  animation: typing 4s steps(30, end) forwards, blink 0.75s step-end infinite;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes typing {
+  from { width: 0ch; }
+  to { width: 26ch; } 
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.features-section{
+  margin-bottom: 40px;
+}

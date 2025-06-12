@@ -1,0 +1,70 @@
+.map-container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.map-responsive {
+  width: 80%;              
+  max-width: 800px;       
+  height: 500px;         
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(202, 15, 15, 0.1);
+}
+
+.map-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#emaillink{
+  color: aliceblue;
+  text-decoration: none;
+}
+
+form input,
+form textarea,
+form select,
+.form-control {
+  background: rgba(0, 0, 0, 0.3) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 10px 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: border-color 0.2s ease-in-out;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+h1,.h2{
+  color: rgb(230, 53, 88) !important;
+}
+
+.custom-password-input:focus{
+  border-color: crimson !important;
+  box-shadow: 0 0 0 0.2rem rgba(220, 20, 60, 0.5) !important;
+  outline: none !important;
+}
+#thanks{
+  margin-left: 300px;
+  width: 700px;
+  box-shadow: 0 6px 12px rgba(220, 20, 60, 0.4); 
+  border-radius: 8px;
+  padding: 25px;
+  padding-left: 45px;
+}
+p{
+  font-size: 23px !important;
+}
+h5,.form-label{
+  color: aliceblue;
+}

@@ -17,4 +17,6 @@ public interface OnlineExamDao extends JpaRepository<OnlineExam, Long>{
 	
 	// get the exam by subject
 	Page<OnlineExam>findBySubject(String subject, Pageable pageable);
+	
+	List<OnlineExam> findBySubject(String subject);
 }

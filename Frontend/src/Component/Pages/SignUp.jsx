@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import '../Styling/Sign.css';
 
 const SignUp = () => {
   const [firstName, setFirstName] = useState("");
@@ -6,11 +8,18 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("ROLE_STUDENT");
+
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleRegister = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setError("");
+    setSuccess("");
 
     try {
       const response = await fetch("http://localhost:8080/users/signup", {
@@ -30,67 +39,84 @@ const SignUp = () => {
         setLastName("");
         setEmail("");
         setPassword("");
-        setRole("");
+        setRole("ROLE_STUDENT");
+
+        setTimeout(() => navigate("/signin"), 1500);
       }
     } catch (err) {
       setError("Server error. Please try again later.");
+    } finally {
+      setLoading(false);
     }
   };
+
   return (
-    <div>
-      <form onSubmit={handleRegister}>
-        <h2>Register as Student</h2>
-        {error && <p>{error}</p>}
-        {success && <p>{success}</p>}
+    <div className="login-wrapper">
+      <form onSubmit={handleRegister} className="login-form">
+        <h2 className="text-center">Register as Student</h2>
+
+        {error && <p className="error">{error}</p>}
+        {success && <p className="success">{success}</p>}
+
         <div className="input-group">
-          <label>firstname:</label>
+          <label>First Name:</label>
           <input
             type="text"
             value={firstName}
             required
             className="input-field"
             minLength={3}
+            placeholder="Enter First Name"
             onChange={(e) => setFirstName(e.target.value)}
           />
         </div>
 
         <div className="input-group">
-          <label>last Name:</label>
+          <label>Last Name:</label>
           <input
             type="text"
             value={lastName}
             required
             className="input-field"
             minLength={3}
+            placeholder="Enter Last Name"
             onChange={(e) => setLastName(e.target.value)}
           />
         </div>
 
         <div className="input-group">
-          <label>email:</label>
+          <label>Email:</label>
           <input
-            type="text"
+            type="email"
             value={email}
             required
             className="input-field"
+            placeholder="Enter Email"
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
 
         <div className="input-group">
-          <label>password:</label>
+          <label>Password:</label>
           <input
-            type="text"
+            type="password"
             value={password}
             required
             className="input-field"
+            placeholder="Enter Password"
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
 
-        <button type="submit">Register</button>
+        <button type="submit" disabled={loading} className="register-button">
+          {loading ? "Registering..." : "Register"}
+        </button>
+
         <p className="login-link">
-          Already have an account? <span className="link">Login</span>
+          Already have an account?{" "}
+          <span className="link" onClick={() => navigate("/signin")}>
+            Login
+          </span>
         </p>
       </form>
     </div>
