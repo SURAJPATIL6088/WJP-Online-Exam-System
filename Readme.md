@@ -1,23 +1,58 @@
-🎓 Vidyarthi – A Smarter Way to Conduct Exams Remotely 🧑‍🏫<br>
-Thrilled to share our capstone project developed during my 𝗖-𝗗𝗔𝗖  training – Vidyarthi, a robust and user-friendly platform for managing and conducting online examinations with ease and security.<br>
+# 🎓 Vidyarthi – A Smarter Way to Conduct Exams Remotely 🧑‍🏫
 
-🏆 This project marks the conclusion of our 𝗪𝗲𝗯 𝗕𝗮𝘀𝗲𝗱 𝗝𝗮𝘃𝗮 𝗣𝗿𝗼𝗴𝗿𝗮𝗺𝗺𝗶𝗻𝗴 module.<br>
-🖥 𝗣𝗿𝗼𝗷𝗲𝗰𝘁 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀:<br>
-✅ Register and attempt exams securely from any device<br>
-✅ Role-based dashboards for Admins and Students<br>
-✅ Real-time result calculation and performance display<br>
-✅ Feedback and contact support built-in<br>
-✅ Fully mobile-responsive and intuitive design<br>
+**Vidyarthi** is a robust, secure, and user-friendly platform designed to manage and conduct online examinations efficiently. Developed as a capstone project during my **C-DAC training**, it reflects the best practices in full-stack web application development using Java and modern frontend technologies.
 
-🛠 𝗧𝗲𝗰𝗵𝗻𝗼𝗹𝗼𝗴𝗶𝗲𝘀 𝗨𝘀𝗲𝗱:<br><br>
-🔹 Frontend: React, React-Bootstrap, Axios<br>
-🔹 Backend: Spring Boot , Spring Security<br>
-🔹 Database: MySQL<br>
-🔹 Authentication: JWT-based access control (Student/Admin roles)<br>
+> 📌 This project marks the culmination of the **Web-Based Java Programming** module.
 
-✨ 𝗣𝗿𝗼𝗷𝗲𝗰𝘁 𝗛𝗶𝗴𝗵𝗹𝗶𝗴𝗵𝘁𝘀:<br><br>
-• Developed secure role-based login with protected routes <br>
-• Created RESTful APIs using Spring Boot for exam workflows<br>
-• Built a modern UI in React with seamless UX<br>
-• Enabled real-time scoring system<br>
-• Subject & question management for admins<br>
+---
+
+## 🖥️ Features
+
+✅ Secure student registration and exam participation from any device  
+✅ Role-based dashboards (Admin & Student)  
+✅ Real-time result calculation and performance insights  
+✅ Feedback and contact support system  
+✅ Fully mobile-responsive and intuitive design  
+
+---
+
+## 🛠 Technologies Used
+
+### 🔹 Frontend
+- React.js
+- React-Bootstrap
+- Axios
+
+### 🔹 Backend
+- Spring Boot
+- Spring Security
+
+### 🔹 Database
+- MySQL
+
+### 🔹 Authentication
+- JWT-based secure access (Admin & Student roles)
+
+---
+
+## ✨ Project Highlights
+
+- 🔐 **Role-Based Authentication**: Secure login and protected routes using JWT and Spring Security  
+- ⚙️ **RESTful API Design**: Seamless integration between frontend and backend via REST APIs  
+- 📊 **Live Result Calculation**: Exams are auto-evaluated, and scores are shown instantly  
+- 🧩 **Admin Capabilities**: Manage subjects, exams, questions, and students  
+- 📱 **Responsive UI**: Fully optimized for both desktop and mobile devices  
+- 📦 **Clean Architecture**: Separation of concerns with modular components and services  
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/SURAJPATIL6088/WJP-Online-Exam-System.git
+```
+
+```bash
+cd WJP-Online-Exam-System
+```
